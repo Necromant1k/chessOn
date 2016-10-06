@@ -1,0 +1,2144 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>chessOn</title>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="styles/vendor.css">
+
+  <link rel="stylesheet" href="styles/main.css">
+
+  <script src="scripts/vendor/modernizr.js"></script>
+</head>
+<body>
+<!--[if lt IE 10]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="search-container">
+          <form action="#">
+            <div class="input-group">
+              <input type="text" class="search-bar form-control" placeholder="Ищете что-то?">
+                  <span class="input-group-btn">
+                  <button class="search-hide-visible btn btn-search" type="submit">
+                    <i class="fa fa-search"></i>
+                  </button>
+                  </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div id="registration" class="modal col-xs-12 col-sm-8 col-sm-offset-2 col-xs-offset-0 fade col-md-4 col-md-offset-4" role="dialog">
+        <div class="modal-dialog  plate">
+          <div class="modal-content ">
+            <form action="#" id="authorize-form">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  <i class="fa fa-times"></i>
+                </button>
+                <h2 class="modal-title header">Регистрация</h2>
+              </div>
+              <div class="modal-body">
+
+                <div class="form-group ">
+                  <div class="i-flex">
+                    <div class="input-group-addon">Логин</div>
+
+                    <input type="text" class="form-control" name="login" id="login" placeholder="Логин">
+                  </div>
+                </div>
+                <div class="form-group ">
+                  <div class="i-flex">
+                    <div class="input-group-addon">E-mail</div>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
+                  </div>
+                </div>
+                <div class="form-group ">
+                  <div class="i-flex">
+                    <div class="input-group-addon">Пароль</div>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Пароль">
+                  </div>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" id="rememberMe" value="">
+                    Согласен(а) с пользовательским соглашением
+                  </label>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="modal-reg">
+                  <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                  <span>или</span>
+                  <a class="sgn_reg" href="#" data-toggle="modal" data-target="#authorize" data-dismiss="modal">Войти</a>
+                </div>
+                <span class="license">
+                  Нажимая на кнопку "Зарегистрироваться", вы подтверждаете, что прочитали <a href="license-definition.html">Пользовательское соглашение.</a>
+                </span>
+                <div class="modal-socials ">
+                  <span class="msoc-header">Вы можете войти с помощью</span>
+                  <div class="msoc-links reg">
+                    <a href="#">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fa fa-vk"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fa fa-odnoklassniki"></i>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+      <div id="authorize"  class="signInUp-modals modal fade col-sm-6 col-sm-offset-3 col-xs-12  col-md-4 col-md-offset-4" role="dialog">
+        <div class="modal-dialog  plate">
+          <div class="modal-content ">
+            <form action="#" class="" id="authorize-form">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  <i class="fa fa-times"></i>
+                </button>
+                <h2 class="modal-title header">Вход</h2>
+              </div>
+              <div class="modal-body">
+
+                <div class="form-group ">
+                  <div class="i-flex">
+                    <div class="input-group-addon">E-mail</div>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
+                  </div>
+                </div>
+                <div class="form-group ">
+
+                  <div class="i-flex">
+                    <div class="input-group-addon">Пароль</div>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Пароль">
+                  </div>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" id="rememberMe" value="">
+                    Запомнить меня
+                  </label>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="links-auth">
+                  <a href="#" data-target="#registration" data-toggle="modal" data-dismiss="modal" class="doRegister">Регистрация</a>
+                  <a href="#" class="doRegister">Забыли пароль?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Войти</button>
+
+                <div class="modal-socials">
+                  <span class="msoc-header">Вы можете войти с помощью</span>
+                  <div class="msoc-links">
+                    <a href="#">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fa fa-vk"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fa fa-odnoklassniki"></i>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-4 col-lg-4 col-xs-12 col-sm-4 ">
+        <div class="logo-container">
+          <div class="logo-image-container">
+            <a href="index.html"><img src="images/logo-header.png" alt="logo"></a>
+          </div>
+          <div class="logo-info-container">
+            <p>
+              Ирай, совервершенствуйся,
+              зарабатывай
+            </p>
+            <div class="chessOn-container">
+              <a href="index.html" class="logo-info">
+                <span class="chessOn-link">Chess<span class="logo-orange-color">On</span><span class="logo-ru-label">ru</span></span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+        <div class="short-logo-info-container">
+          <span class="short-info-logo"><b>13 000</b> пользователей на сайте, из них <b>3575</b> онлайн</span>
+        </div>
+      </div>
+      <div class="col-md-8 col-lg-8 col-xs-12 col-sm-8">
+        <div class="row ">
+          <div class="col-md-12 col-xs-12 header-profile">
+            <div class="btn-container hidden-xs">
+              <a href="buy-vip.html" class="btn-default">Стать VIP</a>
+            </div>
+            <div class="profile-container">
+              <div class="ico-notification-container">
+                    <span class="tooltip-notification">
+                      <a href="#" class="tooltip-dismiss"><i class="fa fa-times"></i></a>
+                      <span class="name-tooltip">alexei87</span> предложил вам игру
+
+                    </span>
+                <a href="#" class="ico-notification" style="display:none">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 229.2 229.2" width="512" height="512"><path d="M220.2 172.2c-20.6-17.8-39.7-43-39.7-105.7 0-36.4-29.6-65.9-65.9-65.9 -36.4 0-65.9 29.6-65.9 65.9 0 62.8-19.1 87.9-39.7 105.8C3.3 177.2 0 184.4 0 191.9c0 4.1 3.4 7.5 7.5 7.5h71.2c3.5 16.7 18.3 29.2 35.9 29.2s32.5-12.6 35.9-29.2h71.2c4.1 0 7.5-3.4 7.5-7.5C229.2 184.4 226 177.2 220.2 172.2zM114.6 213.7c-9.3 0-17.3-5.9-20.4-14.2H135C131.9 207.7 124 213.7 114.6 213.7zM18 184.4c0.3-0.3 0.6-0.6 0.9-0.8 31.4-27.1 44.9-62.2 44.9-117.1 0-28.1 22.9-50.9 50.9-50.9 28.1 0 50.9 22.8 50.9 50.9 0 54.9 13.4 89.9 44.9 117.1 0.3 0.3 0.6 0.5 0.9 0.8H18z"/></svg>
+                  <span class="notification-text">2</span>
+                </a>
+              </div>
+              <div class="profile-info">
+                <a href="profil.html">
+                  <img src="images/user.png" alt="профиль">
+                  <span >Мой профиль</span>
+                </a>
+                    <span class="signOut_profile">
+                      <i class="fa fa-sign-out"></i>
+                    </span>
+              </div>
+
+              <div class="signIn-container-header"  style="display:none">
+                <a href="#" data-target="#registration" data-toggle="modal">Регистрация</a>
+                <a href="#" data-toggle="modal" data-target="#authorize">Войти</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="link-map-container">
+            <nav class="navbar navbar-default custom-navbar">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                  <li class="">
+                    <a class="nav-link" href="game.html">Игра
+                      <span class="link-circle"></span>
+                      <span class="stepper-right"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="nav-link" href="tournaments.html">Турниры
+                      <span class="stepper-left"></span>
+                      <span class="link-circle"></span>
+                      <span class="stepper-right"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="nav-link" href="articles.html">Статьи
+                      <span class="stepper-left"></span>
+                      <span class="link-circle"></span>
+                      <span class="stepper-right"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="nav-link" href="news.html">Новости
+                      <span class="stepper-left"></span>
+                      <span class="link-circle"></span>
+                      <span class="stepper-right"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <div class="nav-ico">
+                      <img src="images/nav-ico.png" alt="">
+                    </div>
+                    <a class="nav-link" href="tutorials.html">Обучение
+                      <span class="stepper-left"></span>
+                      <span class="link-circle"></span>
+                      <span class="stepper-right"></span>
+                    </a>
+                  </li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown">Инфо
+                      <span class="stepper-left"></span>
+                      <span class="stepper-right"></span>
+                      <span class="link-circle"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a tabindex="-1" href="buy-vip.html">Купить VIP</a></li>
+                      <li><a tabindex="-1" href="payments-about.html">Условия оплаты</a></li>
+                      <li><a tabindex="-1" href="faq.html">Вопросы и ответы</a></li>
+                      <li><a tabindex="-1" href="about_site.html">О сайте</a></li>
+                      <li><a tabindex="-1" href="feedback.html">Обратная связь</a></li>
+                      <li><a tabindex="-1" href="dictionary.html">Словарь терминов</a></li>
+                      <li class="dropdown-submenu">
+                        <a class="dropDownToggle-link" tabindex="-1" href="#">Правила<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a tabindex="-1" href="rules-games.html">Правила игры</a></li>
+                          <li><a tabindex="-1" href="rules-chess.html">Правила турниров</a></li>
+                          <li><a tabindex="-1" href="instructions.html">Инструкция для игры</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="nav-link" href="forum.html">Форум
+                      <span class="stepper-left"></span>
+                      <span class="link-circle"></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="link-tree-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="link-tree-container">
+          <a href="#" class="link-tree">Главная</a>
+          <a href="#" class="lin-tree disabled">Личный кабинет</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="main-info another-pages">
+  <div class="container profile">
+    <div class="row">
+      <div class="col-md-9 plate">
+        <div class="header-profile">
+          <h1 class="header">Личный кабинет</h1>
+        </div>
+        <div class="row main-profile-container">
+          <div class="">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="plate-light fit-size-parent">
+                <div class="profile-img-container">
+                  <img src="images/profile-img.png" alt="">
+                </div>
+                <div class="profile-status-container">
+                  <span class="header">В отпуске</span>
+              <span>C
+                <span class="date-from"> 01.07.16 </span>
+                по
+                <span class="date-to">30.07.16</span>
+              </span>
+                </div>
+                <div class="profile-smooth-navigation-container">
+                  <a href="#fav-profile">Избранные статьи</a>
+                  <a href="#profile-history">Истории игр</a>
+                  <a href="#profile-payments">Оплаты</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-12">
+              <div class="plate-light fit-size">
+                <div class="profile-about-header-container">
+                  <div class="user-short-info">
+                    <div class="profile-about-header">
+                      <h2 class="header">Ник пользователя</h2>
+                      <a href="#" class="profile-settings"><i class="fa fa-gears"></i></a>
+                      <i class=" online status-user fa fa-circle"></i>
+                    </div>
+                    <div class="user-scores">
+                      <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                        <span class="user-online-score">2200</span>
+                      </div>
+                      <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                        <span class="user-online-score">1000</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-about-content-container">
+                <span class="about-me">
+                  О себе <span class="about-me-info"><input type="text" placeholder="Люблю играть в шахматы" readonly></span>
+                </span>
+                  <span class="city-country">Страна, город <span class="city-country-info"><input type="text" placeholder="Гомель, Беларусь" readonly></span></span>
+                  <span class="birth-date">Дата рождения <span class="birth-date-info"><input type="text" readonly placeholder="22.03.1991"></span></span>
+                  <span class="sex">Пол <span class="sex-info"><input type="text" readonly placeholder="Мужской"></span></span>
+                  <span class="register-date">Дата регистрации <span class="register-date-info"><input type="text" readonly placeholder="22.05.2016"></span></span>
+                </div>
+                <div class="profile-socials">
+                  <div class="social-icons-container">
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-facebook"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-vk" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-odnoklassniki" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-twitter"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="profile-bars-container plate-light">
+          <div class="tab-content ">
+            <div id="classic" class="tab-pane fade in active">
+              <div class="row">
+                <div class="container-bars-statistics">
+                  <div class="col-md-3 col-xs-12 col-sm-3">
+                    <span class="header"><b>Классические шахматы</b></span>
+                    <div class="about-game-type-container">
+                      <span class="all-games">Всего: <span class="all-games-info">4000</span></span>
+                      <span class="games-wins">Побед: <span class="game-wins-info">4000</span></span>
+                      <span class="game-lose">Поражений: <span class="game-lose-info">10</span></span>
+                      <span class="dead-heat">Ничья: <span class="dead-heat-info">10</span></span>
+                      <span class="task-owned">Решенных задач: <span class="task-owned-info">10</span></span>
+                    </div>
+                  </div>
+                  <div class="col-md-9 col-sm-9 col-xs-12">
+                    <div class="chart-container">
+                      <div class="ct-chart ct-chart-1 ct-perfect-fourth"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="fisher" class="tab-pane fade in">
+              <div class="row">
+                <div class="container-bars-statistics">
+                  <div class="col-md-3 col-sm-3 col-xs-12">
+                    <span class="header"><b>Шахматы Фишера</b></span>
+                    <div class="about-game-type-container">
+                      <span class="all-games">Всего: <span class="all-games-info">4000</span></span>
+                      <span class="games-wins">Побед: <span class="game-wins-info">4000</span></span>
+                      <span class="game-lose">Поражений: <span class="game-lose-info">10</span></span>
+                      <span class="dead-heat">Ничья: <span class="dead-heat-info">10</span></span>
+                      <span class="task-owned">Решенных задач: <span class="task-owned-info">10</span></span>
+                    </div>
+
+                  </div>
+                  <div class="col-md-9 col-sm-9 col-xs-12">
+                    <div class="chart-container">
+                      <div class="ct-chart ct-chart-2 ct-perfect-fourth"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tabs-toggles-container">
+            <div class="row">
+              <div class="col-md-8 col-sm-8 col-xs-12 col-sm-offset-4 col-md-offset-4">
+                <div class="tab-toggles">
+                  <a data-toggle="tab" href="#classic" class="btn-transparent active">Классические</a>
+                  <a data-toggle="tab" href="#fisher" class="btn-transparent">Фишера</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="achievements-container ">
+          <div class="header-achievements">
+            <h2 class="header">Достижения в турнирах</h2>
+          </div>
+          <div class=" achievements-content ">
+            <div class="achievement plate-light">
+              <div class="achieve-place-container">
+                <img src="images/cup-1.png" alt="">
+                  <span class="place-achieve">
+                  <span class="place">1 место</span>
+                  <span class="achieve-date">13.07.2016</span>
+                  </span>
+              </div>
+              <div class="tournament-achieve">
+                <span class="header">Название турнира</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, enim.</p>
+              </div>
+            </div>
+            <div class="achievement plate-light">
+              <div class="achieve-place-container">
+                <img src="images/cup-1.png" alt="">
+                  <span class="place-achieve">
+                  <span class="place">1 место</span>
+                  <span class="achieve-date">13.07.2016</span>
+                  </span>
+              </div>
+              <div class="tournament-achieve">
+                <span class="header">Название турнира</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, enim.</p>
+              </div>
+            </div>
+            <div class="achievement plate-light">
+              <div class="achieve-place-container">
+                <img src="images/cup-1.png" alt="">
+                  <span class="place-achieve">
+                  <span class="place">1 место</span>
+                  <span class="achieve-date">13.07.2016</span>
+                  </span>
+              </div>
+              <div class="tournament-achieve">
+                <span class="header">Название турнира</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, enim.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tournaments-profile-container" id="profile-payments">
+          <div class="header-tournaments-profile">
+            <h2 class="header">Турниры</h2>
+          </div>
+          <div class="tournament-profile-content">
+            <div class="tournament-profile live">
+              <div class="tournament-profile-date-status">
+                <span class="tournament-profile-date">15 июля, 16:30</span>
+                <span class="tournament-profile-status">
+                  Текущий до окончания 2 дня
+                </span>
+              </div>
+              <div class="tournament-profile-name-container">
+                <div class="tournament-profile-name">
+                  <b><a href="tournament-end.html">Название турнира название турнира название турнира</a></b>
+                  <span class="tournament-type-container">
+                    <span class="tournament-game-type">Классические шахматы, </span>
+                    <span class="tournament-game-duration">10 мин, </span>
+                    <span class="tournament-rate-type">без рейтинга, </span>
+                    <span class="tournament-step-limit">без лимита ходов</span>
+                  </span>
+                </div>
+              </div>
+              <div class="tournament-profile-current-status">
+                <span>Идет игра</span>
+                <b><span class="game-start-current">Следующая игра: <span class="next-game-profile">16.07.16 10:00</span></span></b>
+              </div>
+            </div>
+            <div class="tournament-profile success">
+              <div class="tournament-profile-date-status">
+                <span class="tournament-profile-date">15 июля, 16:30</span>
+                <span class="tournament-profile-status">
+                  Оплачено
+                </span>
+              </div>
+              <div class="tournament-profile-name-container">
+                <div class="tournament-profile-name">
+                  <b><a href="tournament-future.html">Название турнира название турнира название турнира</a></b>
+                  <span class="tournament-type-container">
+                    <span class="tournament-game-type">Классические шахматы, </span>
+                    <span class="tournament-game-duration">10 мин, </span>
+                    <span class="tournament-rate-type">без рейтинга, </span>
+                    <span class="tournament-step-limit">без лимита ходов</span>
+                  </span>
+                </div>
+              </div>
+              <div class="tournament-profile-current-status">
+                <span>Идет игра</span>
+                <b><span class="game-start-current">Следующая игра: <span class="next-game-profile">16.07.16 10:00</span></span></b>
+              </div>
+            </div>
+            <div class="tournament-profile decline">
+              <div class="tournament-profile-date-status">
+                <span class="tournament-profile-date">15 июля, 16:30</span>
+                <span class="tournament-profile-status">
+                  Не оплачено
+                </span>
+              </div>
+              <div class="tournament-profile-name-container">
+                <div class="tournament-profile-name">
+                  <b><a href="tournament-future.html">Название турнира название турнира название турнира</a></b>
+                  <span class="tournament-type-container">
+                    <span class="tournament-game-type">Классические шахматы, </span>
+                    <span class="tournament-game-duration">10 мин, </span>
+                    <span class="tournament-rate-type">без рейтинга, </span>
+                    <span class="tournament-step-limit">без лимита ходов</span>
+                  </span>
+                </div>
+              </div>
+              <div class="tournament-profile-current-status">
+                <a href="payments.html" class="btn-transparent">Оплатить</a>
+              </div>
+            </div>
+            <div class="tournament-profile">
+              <div class="tournament-profile-date-status">
+                <span class="tournament-profile-date">15 июля, 16:30</span>
+                <span class="tournament-profile-status">
+                  Текущий до окончания 2 дня
+                </span>
+              </div>
+              <div class="tournament-profile-name-container">
+                <div class="tournament-profile-name">
+                  <b><a href="tournament-future.html">Название турнира название турнира название турнира</a></b>
+                  <span class="tournament-type-container">
+                    <span class="tournament-game-type">Классические шахматы, </span>
+                    <span class="tournament-game-duration">10 мин, </span>
+                    <span class="tournament-rate-type">без рейтинга, </span>
+                    <span class="tournament-step-limit">без лимита ходов</span>
+                  </span>
+                </div>
+              </div>
+              <div class="tournament-profile-current-status">
+                <span>Идет игра</span>
+                <b><span class="game-start-current">Следующая игра: <span class="next-game-profile">16.07.16 10:00</span></span></b>
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class="favs-profile-articles" id="fav-profile">
+            <div class="header-favs-profile">
+              <h2 class="header">
+                Избранные статьи
+              </h2>
+              <a href="favourtie-articles.html" class="show-all">Посмотреть все</a>
+            </div>
+          <div class="last-article-plate">
+                      <span class="favourite-icon">
+                          <a href="#" class="">
+                            <span class="fav-ico">
+                              <i class="fa fa-star"></i>
+                            </span>
+                          </a>
+                        </span>
+            <div class="container-profile-fav-article">
+              <div class="header-last-article">
+                <h4 class="header">
+                  <a href="articles-page.html">Название в две строчки</a>
+                </h4>
+                  <span class="news-date">
+                        15.08.2016, 18:00
+                  </span>
+                <div class="last-article-score-container">
+                  <a href="articles-page.html"><i class="fa fa-long-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="last-article-content">
+                <a href="articles-page.html" class="last-article-content-container">
+                  <div class="last-article-image-container">
+                    <img src="images/last-news/s2.png" alt="last article image">
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="last-article-plate">
+                      <span class="favourite-icon">
+                          <a href="#" class="">
+                            <span class="fav-ico">
+                              <i class="fa fa-star"></i>
+                            </span>
+                          </a>
+                        </span>
+            <div class="container-profile-fav-article">
+              <div class="header-last-article">
+                <h4 class="header">
+                  <a href="articles-page.html">Название в две строчки</a>
+                </h4>
+                  <span class="news-date">
+                        15.08.2016, 18:00
+                  </span>
+                <div class="last-article-score-container">
+                  <a href="articles-page.html"><i class="fa fa-long-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="last-article-content">
+                <a href="articles-page.html" class="last-article-content-container">
+                  <div class="last-article-image-container">
+                    <img src="images/last-news/s2.png" alt="last article image">
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="last-article-plate">
+                      <span class="favourite-icon">
+                          <a href="#" class="">
+                            <span class="fav-ico">
+                              <i class="fa fa-star"></i>
+                            </span>
+                          </a>
+                        </span>
+            <div class="container-profile-fav-article">
+              <div class="header-last-article">
+                <h4 class="header">
+                  <a href="articles-page.html">Название в две строчки</a>
+                </h4>
+                  <span class="news-date">
+                        15.08.2016, 18:00
+                  </span>
+                <div class="last-article-score-container">
+                  <a href="articles-page.html"><i class="fa fa-long-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="last-article-content">
+                <a href="articles-page.html" class="last-article-content-container">
+                  <div class="last-article-image-container">
+                    <img src="images/last-news/s2.png" alt="last article image">
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="last-article-plate">
+                      <span class="favourite-icon">
+                          <a href="#" class="">
+                            <span class="fav-ico">
+                              <i class="fa fa-star"></i>
+                            </span>
+                          </a>
+                        </span>
+            <div class="container-profile-fav-article">
+              <div class="header-last-article">
+                <h4 class="header">
+                  <a href="articles-page.html">Название в две строчки</a>
+                </h4>
+                  <span class="news-date">
+                        15.08.2016, 18:00
+                  </span>
+                <div class="last-article-score-container">
+                  <a href="articles-page.html"><i class="fa fa-long-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="last-article-content">
+                <a href="articles-page.html" class="last-article-content-container">
+                  <div class="last-article-image-container">
+                    <img src="images/last-news/s2.png" alt="last article image">
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="profile-history" id="profile-history">
+          <div class="header-profile-history">
+            <h2 class="header">История игр</h2>
+            <a href="game-history-full.html" class="show-all">Посмотреть все</a>
+          </div>
+          <div class="profile-history-table">
+            <div id='showFilter-pf-btn' class="sh-pf hidden-md hidden-lg">
+              <a href=""><i class="fa fa-filter"></i></a>
+            </div>
+            <div class="profile-history-table-header">
+              <div class="ph-enemy active">
+
+                <a href="#">Противник <i class="fa fa-sort-desc"></i></a>
+              </div>
+              <div class="ph-rate">
+                <a href="#">Рейтинг <i class="fa fa-sort-desc"></i></a>
+              </div>
+              <div class="ph-color">
+                <a href="#">Цвет <i class="fa fa-sort-desc"></i></a>
+              </div>
+              <div class="ph-game-type">
+                <a href="">Тип игры <i class="fa fa-sort-desc"></i></a>
+              </div>
+              <div class="ph-result">
+                <a href="#">Результат <i class="fa fa-sort-desc"></i></a>
+              </div>
+              <div class="ph-date">
+                <a href="#">Дата <i class="fa fa-sort-desc"></i></a>
+              </div>
+            </div>
+            <div class="profile-history-body">
+              <div class="profile-history-game">
+                <div class="ph-enemy">
+                  <div class="user-plate-container">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="ph-rate">
+                  <a href="#">Рейтинг</a>
+                </div>
+                <div class="ph-color">
+                  <a href="#">Черные</a>
+                </div>
+                <div class="ph-game-type">
+                  <a href="">Классические шахматы</a>
+                </div>
+                <div class="ph-result">
+                  <a href="#">Результат</a>
+                </div>
+                <div class="ph-date">
+                  <a href="#">11.11.2016</a>
+                </div>
+              </div>
+              <div class="profile-history-game">
+                <div class="ph-enemy">
+                  <div class="user-plate-container">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="ph-rate">
+                  <a href="#">Рейтинг</a>
+                </div>
+                <div class="ph-color">
+                  <a href="#">Черные</a>
+                </div>
+                <div class="ph-game-type">
+                  <a href="">Классические шахматы</a>
+                </div>
+                <div class="ph-result">
+                  <a href="#">Результат</a>
+                </div>
+                <div class="ph-date">
+                  <a href="#">11.11.2016</a>
+                </div>
+              </div>
+              <div class="profile-history-game">
+                <div class="ph-enemy">
+                  <div class="user-plate-container">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="ph-rate">
+                  <a href="#">Рейтинг</a>
+                </div>
+                <div class="ph-color">
+                  <a href="#">Черные</a>
+                </div>
+                <div class="ph-game-type">
+                  <a href="">Классические шахматы</a>
+                </div>
+                <div class="ph-result">
+                  <a href="#">Результат</a>
+                </div>
+                <div class="ph-date">
+                  <a href="#">11.11.2016</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fav-container">
+          <div class="fav-header">
+                  <h2 class="header">Избранные</h2>
+                </div>
+          <div class="fav-slider-container">
+                  <div class="nav-fav-container"></div>
+                  <div class="fav-carousel owl-carousel ">
+                    <div class="user-plate-container">
+                      <div class="user-image">
+                        <a href="user-profile.html"><img src="images/user-l.png" alt="user"></a>
+              <span class="favourite-icon">
+              <a href="#">
+              <span class="fav-ico">
+                <i class="fa fa-star added"></i>
+              </span>
+              </a>
+          </span>
+                      </div>
+                      <div class="user-short-info">
+                        <h4 class="header">Ник пользователя</h4>
+                        <div class="user-scores">
+                          <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                            <span class="user-online-score">2200</span>
+                          </div>
+                          <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                            <span class="user-online-score">1000</span>
+                          </div>
+                        </div>
+                      </div>
+            <span class="top-ico">
+            <img src="images/icons/top.png" alt="top icon">
+          </span>
+                    </div>
+                    <div class="user-plate-container">
+                      <div class="user-image">
+                        <a href="user-profile.html"><img src="images/user-l.png" alt="user"></a>
+              <span class="favourite-icon">
+              <a href="#">
+              <span class="fav-ico">
+                <i class="fa fa-star added"></i>
+              </span>
+              </a>
+          </span>
+                      </div>
+                      <div class="user-short-info">
+                        <h4 class="header">Ник пользователя</h4>
+                        <div class="user-scores">
+                          <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                            <span class="user-online-score">2200</span>
+                          </div>
+                          <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                            <span class="user-online-score">1000</span>
+                          </div>
+                        </div>
+                      </div>
+            <span class="top-ico">
+            <img src="images/icons/top.png" alt="top icon">
+          </span>
+                    </div>
+                    <div class="user-plate-container">
+                      <div class="user-image">
+                        <a href="user-profile.html"><img src="images/user-l.png" alt="user"></a>
+              <span class="favourite-icon">
+              <a href="#">
+              <span class="fav-ico">
+                <i class="fa fa-star added"></i>
+              </span>
+              </a>
+          </span>
+                      </div>
+                      <div class="user-short-info">
+                        <h4 class="header">Ник пользователя</h4>
+                        <div class="user-scores">
+                          <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                            <span class="user-online-score">2200</span>
+                          </div>
+                          <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                            <span class="user-online-score">1000</span>
+                          </div>
+                        </div>
+                      </div>
+            <span class="top-ico">
+            <img src="images/icons/top.png" alt="top icon">
+          </span>
+                    </div>
+                    <div class="user-plate-container">
+                      <div class="user-image">
+                        <a href="user-profile.html"><img src="images/user-l.png" alt="user"></a>
+              <span class="favourite-icon">
+              <a href="#">
+              <span class="fav-ico">
+                <i class="fa fa-star added"></i>
+              </span>
+              </a>
+          </span>
+                      </div>
+                      <div class="user-short-info">
+                        <h4 class="header">Ник пользователя</h4>
+                        <div class="user-scores">
+                          <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                            <span class="user-online-score">2200</span>
+                          </div>
+                          <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                            <span class="user-online-score">1000</span>
+                          </div>
+                        </div>
+                      </div>
+            <span class="top-ico">
+            <img src="images/icons/top.png" alt="top icon">
+          </span>
+                    </div>
+                    <div class="user-plate-container">
+                      <div class="user-image">
+                        <a href="user-profile.html"><img src="images/user-l.png" alt="user"></a>
+              <span class="favourite-icon">
+              <a href="#">
+              <span class="fav-ico">
+                <i class="fa fa-star added"></i>
+              </span>
+              </a>
+          </span>
+                      </div>
+                      <div class="user-short-info">
+                        <h4 class="header">Ник пользователя</h4>
+                        <div class="user-scores">
+                          <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                            <span class="user-online-score">2200</span>
+                          </div>
+                          <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                            <span class="user-online-score">1000</span>
+                          </div>
+                        </div>
+                      </div>
+            <span class="top-ico">
+            <img src="images/icons/top.png" alt="top icon">
+          </span>
+                    </div>
+                    <div class="user-plate-container">
+                      <div class="user-image">
+                        <a href="user-profile.html"><img src="images/user-l.png" alt="user"></a>
+              <span class="favourite-icon">
+              <a href="#">
+              <span class="fav-ico">
+                <i class="fa fa-star added"></i>
+              </span>
+              </a>
+          </span>
+                      </div>
+                      <div class="user-short-info">
+                        <h4 class="header">Ник пользователя</h4>
+                        <div class="user-scores">
+                          <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                            <span class="user-online-score">2200</span>
+                          </div>
+                          <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                            <span class="user-online-score">1000</span>
+                          </div>
+                        </div>
+                      </div>
+            <span class="top-ico">
+            <img src="images/icons/top.png" alt="top icon">
+          </span>
+                    </div>
+                    <div class="user-plate-container">
+                      <div class="user-image">
+                        <a href="user-profile.html"><img src="images/user-l.png" alt="user"></a>
+              <span class="favourite-icon">
+              <a href="#">
+              <span class="fav-ico">
+                <i class="fa fa-star added"></i>
+              </span>
+              </a>
+          </span>
+                      </div>
+                      <div class="user-short-info">
+                        <h4 class="header">Ник пользователя</h4>
+                        <div class="user-scores">
+                          <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                            <span class="user-online-score">2200</span>
+                          </div>
+                          <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                            <span class="user-online-score">1000</span>
+                          </div>
+                        </div>
+                      </div>
+            <span class="top-ico">
+            <img src="images/icons/top.png" alt="top icon">
+          </span>
+                    </div>
+                    <div class="user-plate-container">
+                      <div class="user-image">
+                        <a href="user-profile.html"><img src="images/user-l.png" alt="user"></a>
+              <span class="favourite-icon">
+              <a href="#">
+              <span class="fav-ico">
+                <i class="fa fa-star added"></i>
+              </span>
+              </a>
+          </span>
+                      </div>
+                      <div class="user-short-info">
+                        <h4 class="header">Ник пользователя</h4>
+                        <div class="user-scores">
+                          <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                            <span class="user-online-score">2200</span>
+                          </div>
+                          <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                            <span class="user-online-score">1000</span>
+                          </div>
+                        </div>
+                      </div>
+            <span class="top-ico">
+            <img src="images/icons/top.png" alt="top icon">
+          </span>
+                    </div>
+                  </div>
+                </div>
+        </div>
+      </div>
+      <div class="col-md-3 no-paddings-right-side">
+        <div class="gamers-container-right-side">
+          <div class="peoples-online-container plate">
+            <div class="header-peoples-online">
+              <h2 class="header">Игроки на сайте</h2>
+              <div class="tabs-container">
+                <a data-toggle="tab" href="#online-tab">Онлайн</a>
+                <a data-toggle="tab" href="#top-tab" class="active">Топ</a>
+              </div>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane top-tab fade in active " id="top-tab">
+                <div class="top-tab-content tab-pane-scroll" id="top-tab-scroll" >
+                  <div class="user-plate-container top">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane online-tab fade in " id="online-tab">
+                <div class="online-tab-content tab-pane-scroll" id="online-tab-scroll" >
+                  <div class="user-plate-container top">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                  <div class="user-plate-container ">
+                    <span class="favourite-icon">
+                      <a href="#">
+                        <span class="fav-ico">
+                          <i class="fa fa-star-o added"></i>
+                        </span>
+                      </a>
+                    </span>
+                    <div class="user-image">
+                      <img src="images/user.png" alt="user">
+                    </div>
+                    <div class="user-short-info">
+                      <h4 class="header"><a href="user-profile.html">Ник пользователя</a></h4>
+                      <div class="user-scores">
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                          <img src="images/icons/chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">2200</span>
+                        </div>
+                        <div class="online-user-score-container">
+                          <span class="user-online-score-icon">
+                            <img src="images/icons/transf-chess.png" alt="icon">
+                          </span>
+                          <span class="user-online-score">1000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="top-ico">
+                      <img src="images/icons/top.png" alt="top icon">
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tournament-schedule-container">
+            <div class="header-tournament-schedule">
+              <h2 class="header">Расписание турниров</h2>
+              <div class="schedule-date-calendar">
+                <span class="today-schedule ">на сегодня</span>
+                <a href="#" class="schedule-calendar-icon ">
+                  <i class="fa fa-calendar-check-o"></i>
+                </a>
+              </div>
+            </div>
+            <div class="datepicker-container" style="display:none; overflow:hidden;">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div id="" class=" datepicker-inline"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container-boxes">
+              <a href="tournament-future.html">
+                <div class="tournament-box">
+                  <div class="tournament-box-time">
+                    <span class="date-tournament">18.07</span>
+                    <span class="time-tournament">10:00</span>
+                  </div>
+                  <div class="tournament-box-about">
+                    <div class="header-about-tournament-container">
+                      <h3 class="header-about-tournament">
+                        Утренний турнир
+                      </h3>
+                      <p class="tournament-amount">10 участников</p>
+                    </div>
+                    <p class="about-tournament">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, laudantium.
+                    </p>
+                  </div>
+                    <span class="arrow">
+                      <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                </div>
+              </a>
+              <a href="tournament-future.html">
+                <div class="tournament-box">
+                  <div class="tournament-box-time">
+                    <span class="date-tournament">18.07</span>
+                    <span class="time-tournament">10:00</span>
+                  </div>
+                  <div class="tournament-box-about">
+                    <div class="header-about-tournament-container">
+                      <h3 class="header-about-tournament">
+                        Утренний турнир
+                      </h3>
+                      <p class="tournament-amount">10 участников</p>
+                    </div>
+                    <p class="about-tournament">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, laudantium.
+                    </p>
+                  </div>
+                    <span class="arrow">
+                      <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                </div>
+              </a>
+              <a href="tournament-future.html">
+                <div class="tournament-box">
+                  <div class="tournament-box-time">
+                    <span class="date-tournament">18.07</span>
+                    <span class="time-tournament">10:00</span>
+                  </div>
+                  <div class="tournament-box-about">
+                    <div class="header-about-tournament-container">
+                      <h3 class="header-about-tournament">
+                        Утренний турнир
+                      </h3>
+                      <p class="tournament-amount">10 участников</p>
+                    </div>
+                    <p class="about-tournament">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, laudantium.
+                    </p>
+                  </div>
+                    <span class="arrow">
+                      <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                </div>
+              </a>
+              <a href="tournament-future.html">
+                <div class="tournament-box">
+                  <div class="tournament-box-time">
+                    <span class="date-tournament">18.07</span>
+                    <span class="time-tournament">10:00</span>
+                  </div>
+                  <div class="tournament-box-about">
+                    <div class="header-about-tournament-container">
+                      <h3 class="header-about-tournament">
+                        Утренний турнир
+                      </h3>
+                      <p class="tournament-amount">10 участников</p>
+                    </div>
+                    <p class="about-tournament">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, laudantium.
+                    </p>
+                  </div>
+                    <span class="arrow">
+                      <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="navigation-footer">
+      <div class="logo-footer-container">
+        <div class="logo-footer-image-container">
+          <img src="images/logo-footer.png" alt="логотип">
+        </div>
+        <div class="chessOn-container">
+          <a href="" class="logo-info">
+            <span class="chessOn-link">Chess<span class="logo-orange-color">On</span><span class="logo-ru-label">ru</span></span>
+          </a>
+        </div>
+      </div>
+      <div class="nav-footer-container">
+        <ul class="nav-footer">
+          <li class="">
+            <a class="nav-link" href="game.html">Игра
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="tournaments.html">Турниры
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="articles.html">Статьи
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="news.html">Новости
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="tutorials.html">Обучение
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="about_site.html">О сайте
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<section class="modals-container">
+  <div class="container">
+    <div class="row">
+      <div id="askQuestion" class="modal fade col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3" role="dialog">
+        <div class="modal-dialog  plate">
+          <div class="modal-content ">
+            <form action="#">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  <i class="fa fa-times"></i>
+                </button>
+                <h2 class="modal-title header">Форма для обратной связи</h2>
+              </div>
+              <div class="modal-body">
+                <p>
+                  Огромное спасибо всем, кто когда либо помогал в поддержке или продвижении данного проекта.
+                  Если у Вас есть какие-либо предложения или замечания, просьба заполнить форму ниже.
+                </p>
+                  <span class="aQuest">
+                    Можно написать нам на следующие адреса :
+                    <span>
+                      <a href="#">info@site.ru</a>
+                      или
+                      <a href="#">info@site.ru</a>
+                    </span>
+                  </span>
+                <div class="form-container-aQ">
+                  <span class="form-header">Остались вопросы? Напишите нам</span>
+                  <form action="#">
+                    <div class="feedback-input-group">
+                      <input type="text" placeholder="Имя">
+                      <input type="text" placeholder="Почта">
+                      <input type="text" placeholder="Тема">
+                    </div>
+                    <div class="feedback-textarea">
+                      <textarea type="text" class="form-control" placeholder="Текст сообщения"></textarea>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-default" >Отправить</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-socials">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 social-container">
+        <p>
+          Copyright © 2016г. Все права защищены
+        </p>
+        <div class="social-icons-container">
+          <ul>
+            <li>
+              <a href="#">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-vk" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-odnoklassniki" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- content -->
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+  (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='https://www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+  ga('create','UA-XXXXX-X');ga('send','pageview');
+</script>
+<script src="scripts/vendor.js"></script>
+
+<script src="scripts/plugins.js"></script>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>
