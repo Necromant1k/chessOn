@@ -1,0 +1,52 @@
+$XS:    320px;
+$X375 : 375px;
+$X425:  425px;
+$S:     480px;
+$XS-SM: 767px;
+$PreM:  640px;
+$M:     768px;
+$L:     1023px;
+$LTab:  1024px;
+$XL:    1200px;
+
+// media queries
+
+@mixin MQ($canvas) {
+  @if $canvas == XS {
+    @media only screen and (max-width: $XS) { @content; }
+  }
+  @else if $canvas == S {
+    @media only screen and (min-width:$XS) and (max-width: $S) { @content; }
+  }
+  @else if $canvas == PostS {
+    @media only screen and (min-width:$S + 1) and (max-width: $PreM - 1) { @content; }
+  }
+  @else if $canvas == XSSM {
+    @media only screen and (max-width: $XS-SM) { @content; }
+  }
+  @else if $canvas == X375 {
+    @media only screen and (max-width: $X375) { @content; }
+  }
+  @else if $canvas == X425 {
+    @media only screen and (min-width:$X425) and (max-width: $S) { @content; }
+  }
+  @else if $canvas == M {
+    @media only screen and (min-width:$M) and (max-width: $L) { @content; }
+  }
+  @else if $canvas == PreM {
+    @media only screen and (min-width:$PreM) and (max-width: $L) { @content; }
+  }
+  @else if $canvas == LTab {
+    @media only screen and (min-width:$LTab) and (max-width: $XL) { @content; }
+  }
+  @else if $canvas == L {
+    @media only screen and (max-width: $L) { @content; }
+  }
+  @else if $canvas == XL {
+    @media only screen and (max-width: $XL) { @content; }
+  }
+  @else if $canvas == OXL {
+    @media only screen and (min-width: $XL) { @content; }
+  }
+}
+
